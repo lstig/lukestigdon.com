@@ -1,10 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset='utf8'>
-    <meta name='viewport' content='width=device-width'>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Luke Stigdon</title>
-</head>
-<body>
-</body>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
+    <script defer src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Hello World
+      </h1>
+    </div>
+  </section>
+  </body>
 </html>
