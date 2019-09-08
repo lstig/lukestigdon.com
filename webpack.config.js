@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 const glob = require('glob');
@@ -49,6 +50,9 @@ module.exports = env => ({
         new PurgecssPlugin({
             paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true })
         }),
+        new CopyPlugin([
+            `${PATHS.src}/CNAME`
+        ]),
         new CleanWebpackPlugin()
     ],
     devtool: env.mode === 'development' ? 'source-map' : false
