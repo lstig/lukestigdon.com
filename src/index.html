@@ -8,12 +8,28 @@
     <script defer src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </head>
   <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-    </div>
-  </section>
+    <section class="hero is-dark is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-1 is-spaced">
+            Luke Stigdon
+          </h1>
+          <h2 class="subtitle">
+            Software Developer | DevOps Engineer | Cloud Technology Enthusiast
+          </h2>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <nav class="tabs is-centered is-large">
+          <div class="container">
+            <ul>
+              <li><a href="https://www.github.com/lstig"><i class="fab fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/luke-stigdon"><i class="fab fa-linkedin-in"></i></a></li>
+              <li><a href="mailto:contact@lukestigdon.com"><i class="fab fas fa-envelope"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
   </body>
 </html>

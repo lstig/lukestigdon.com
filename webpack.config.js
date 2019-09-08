@@ -1,12 +1,19 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
+const glob = require('glob');
+
+const PATHS = {
+    pub: path.join(__dirname, '/public'),
+    src: path.join(__dirname, '/src')
+}
 
 module.exports = env => ({
     mode: env.mode,
     output: {
-        path: path.join(__dirname, '/public'),
+        path: PATHS.pub,
         filename: '[name].[chunkhash].js'
     },
     module: {
@@ -19,6 +26,13 @@ module.exports = env => ({
                     'css-loader',
                     'sass-loader'
                 ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader"
+                ]
             }
         ]
     },
@@ -29,8 +43,11 @@ module.exports = env => ({
         new HtmlWebpackPlugin({
             inject: false,
             hash: true,
-            template: './src/index.html',
+            template: `${PATHS.src}/index.html`,
             filename: 'index.html'
+        }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true })
         }),
         new CleanWebpackPlugin()
     ],
