@@ -25,5 +25,10 @@
     "scripts": {
         "dev": "webpack-dev-server --env.mode development",
         "build": "webpack --env.mode production"
+    },
+    "husky": {
+        "hooks": {
+            "pre-push": "npm run build && git add public && git commit --amend --no-edit"
+        }
     }
 }
