@@ -28,7 +28,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-push": "npm run build && git add public && git commit --amend --no-edit"
+            "pre-commit": "npm run build && git add public && HUSKY_SKIP_HOOKS=1 git commit --amend --no-edit"
         }
     }
 }
