@@ -1,29 +1,27 @@
 {
-    "name": "lukestigdon.com",
-    "version": "1.0.0",
-    "description": "Source for lukestigdon.com",
-    "author": "Luke Stigdon",
-    "license": "MIT",
-    "devDependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.22",
-        "@fortawesome/free-brands-svg-icons": "^5.10.2",
-        "@fortawesome/free-solid-svg-icons": "^5.10.2",
-        "bulma": "^0.7.5",
-        "clean-webpack-plugin": "^3.0.0",
-        "copy-webpack-plugin": "^5.0.4",
-        "css-loader": "^3.2.0",
-        "html-webpack-plugin": "^3.2.0",
-        "mini-css-extract-plugin": "^0.8.0",
-        "node-sass": "^4.12.0",
-        "purgecss-webpack-plugin": "^1.5.0",
-        "sass-loader": "^8.0.0",
-        "style-loader": "^1.0.0",
-        "webpack": "^4.39.3",
-        "webpack-cli": "^3.3.7",
-        "webpack-dev-server": "^3.8.0"
-    },
-    "scripts": {
-        "dev": "webpack-dev-server --env.mode development",
-        "build": "webpack --env.mode production"
-    }
+  "name": "lukestigdon.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lstig/lukestigdon.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lstig/lukestigdon.com/issues"
+  },
+  "homepage": "https://github.com/lstig/lukestigdon.com#readme",
+  "dependencies": {
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
 }
