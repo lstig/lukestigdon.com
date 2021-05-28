@@ -7,14 +7,14 @@ const path = require('path');
 const glob = require('glob');
 
 const PATHS = {
-    pub: path.join(__dirname, '/public'),
+    dist: path.join(__dirname, '/dist'),
     src: path.join(__dirname, '/src')
 }
 
 module.exports = env => ({
     mode: env.production ? 'production' : 'development',
     output: {
-        path: PATHS.pub,
+        path: PATHS.dist,
         filename: '[name].[chunkhash].js'
     },
     module: {
@@ -56,6 +56,6 @@ module.exports = env => ({
     ],
     devtool: env.production ? false: 'source-map',
     devServer: {
-        contentBase: PATHS.pub
+        contentBase: PATHS.dist
     }
 });
