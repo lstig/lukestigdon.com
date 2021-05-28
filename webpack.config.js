@@ -12,7 +12,7 @@ const PATHS = {
 }
 
 module.exports = env => ({
-    mode: env.mode,
+    mode: env.production ? 'production' : 'development',
     output: {
         path: PATHS.pub,
         filename: '[name].[chunkhash].js'
@@ -23,7 +23,6 @@ module.exports = env => ({
                 test: /\.scss$/,
                 use: [
                     'style-loader',
-                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
                 ]
@@ -42,7 +41,7 @@ module.exports = env => ({
             filename: 'style.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
-            inject: false,
+            inject: 'head',
             hash: true,
             template: `${PATHS.src}/index.html`,
             filename: 'index.html'
@@ -50,10 +49,13 @@ module.exports = env => ({
         new PurgecssPlugin({
             paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true })
         }),
-        new CopyPlugin([
-            `${PATHS.src}/CNAME`
-        ]),
+        new CopyPlugin({
+            patterns: [ `${PATHS.src}/CNAME` ]
+        }),
         new CleanWebpackPlugin()
     ],
-    devtool: env.mode === 'development' ? 'source-map' : false
+    devtool: env.production ? false: 'source-map',
+    devServer: {
+        contentBase: PATHS.pub
+    }
 });
