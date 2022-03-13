@@ -1,8 +1,6 @@
-import { UserConfig } from 'vitepress';
+import { defineConfig } from 'vitepress';
 
-const config: UserConfig = {
+export default defineConfig({
   title: "asdf",
-  description: "Foo bar"
-}
-
-export default config
+  description: "foo bar"
+})
