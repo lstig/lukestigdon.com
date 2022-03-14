@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-  title: "asdf",
-  description: "foo bar"
+  title: "Luke Stigdon",
+  description: "Luke Stigdon - Software Developer | DevOps Engineer | Cloud Technology Enthusiast"
 })

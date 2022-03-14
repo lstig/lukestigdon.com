@@ -1,3 +1,8 @@
 @charset "utf-8";
-@import '~bulma/bulma';
-@import '_variables';
+// Import Bulma cora
+@import "bulma/sass/utilities/_all";
+
+// Customizations go here
+
+// Import Bulma styles
+@import "bulma/bulma";
