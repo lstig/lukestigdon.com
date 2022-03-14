@@ -1,13 +1,10 @@
 <template>
   <section class="hero is-dark is-fullheight">
-    <!-- Hero content: will be in the middle -->
     <div class="hero-body">
       <div class="container has-text-centered">
         <Content />
       </div>
     </div>
-
-    <!-- Hero footer: will stick at the bottom -->
     <div v-if="contactLinks.length > 0" class="hero-foot">
       <nav class="tabs is-boxed is-large is-centered">
         <div class="container">
