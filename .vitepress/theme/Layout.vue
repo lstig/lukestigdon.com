@@ -2,8 +2,13 @@
   <section class="hero is-dark is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <p class="title">{{ title }}</p>
-        <p class="subtitle">{{ subtitle }}</p>
+        <div v-if="!!title && !!subtitle">
+          <p class="title">{{ title }}</p>
+          <p class="subtitle">{{ subtitle }}</p>
+        </div>
+        <div v-else>
+          <Content />
+        </div>
       </div>
     </div>
     <div v-if="contactLinks.length > 0" class="hero-foot">
