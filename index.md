@@ -1,6 +1,7 @@
 ---
-title: Luke Stigdon
-subtitle: DevOps Engineer and Cloud Technology Enthusiast
+title: Home
+homeTitle: Luke Stigdon
+homeSubtitle: DevOps Engineer and Cloud Technology Enthusiast
 links:
   - href: https://www.github.com/lstig
     label: Luke's GitHub account

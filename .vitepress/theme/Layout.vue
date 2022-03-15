@@ -2,9 +2,9 @@
   <section class="hero is-dark is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <div v-if="!!title && !!subtitle">
-          <p class="title">{{ title }}</p>
-          <p class="subtitle">{{ subtitle }}</p>
+        <div v-if="home">
+          <p class="title">{{ homeTitle }}</p>
+          <p class="subtitle">{{ homeSubtitle }}</p>
         </div>
         <div v-else>
           <Content />
@@ -35,9 +35,13 @@ import { useData } from "vitepress";
 
 const { frontmatter } = useData();
 
-const title = computed(() => frontmatter.value.title);
+const home = computed(
+  () => !!frontmatter.value.homeTitle && !!frontmatter.value.homeSubtitle
+);
 
-const subtitle = computed(() => frontmatter.value.subtitle);
+const homeTitle = computed(() => frontmatter.value.homeTitle);
+
+const homeSubtitle = computed(() => frontmatter.value.homeSubtitle);
 
 const contactLinks = computed(() =>
   !!frontmatter.value.links ? frontmatter.value.links : []
