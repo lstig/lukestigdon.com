@@ -3,6 +3,11 @@
 @import "bulma/sass/utilities/_all";
 
 // Customizations go here
+div.hero-foot svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
 
 // Import Bulma styles
 @import "bulma/bulma";
