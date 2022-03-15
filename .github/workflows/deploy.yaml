@@ -4,6 +4,7 @@ name: Build and Deploy
 env:
   CNAME: www.lukestigdon.com
   ODIR: dist
+  FILTER_BRANCH_SQUELCH_WARNING: 1
 
 on:
   push:
@@ -28,4 +29,4 @@ jobs:
           git add -f $ODIR
           git commit -m 'deploy'
           git filter-branch --subdirectory-filter $ODIR -- --all
-          git push -f origin gh-pages
+          git push -f origin main:gh-pages
