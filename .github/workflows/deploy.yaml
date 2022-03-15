@@ -22,12 +22,10 @@ jobs:
       - run: yarn build
       - name: deploy
         run: |
-          cd $ODIR
-          echo $CNAME > CNAME
-          git config --global init.defaultBranch "main"
-          git config --global user.email "lstig@users.noreply.github.com"
-          git config --global user.name "Luke Stigdon"
-          git init
-          git add -A
+          echo $CNAME > $ODIR/CNAME
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -f $ODIR
           git commit -m 'deploy'
-          git push -f $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git main:gh-pages
+          git filter-branch --subdirectory-filter $ODIR -- --all
+          git push -f main:gh-pages
