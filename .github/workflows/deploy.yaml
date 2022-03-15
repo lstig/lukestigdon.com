@@ -1,0 +1,30 @@
+---
+name: Build and Deploy
+
+env:
+  CNAME: www.lukestigdon.com
+  ODIR: dist
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: yarn install
+      - run: yarn site:build
+      - name: deploy
+        run: |
+          cd $ODIR
+          echo $CNAME > CNAME
+          git init
+          git add -A
+          git commit -m 'deploy'
+          git push -f git@github.com:$GITHUB_REPOSITORY.git main:gh-pages
