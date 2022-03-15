@@ -6,11 +6,9 @@
 </template>
 
 <script setup lang="ts">
-const msgs = [
-  `Oops! Nothing to see here...`,
-]
+const msgs = [`Oops! Nothing to see here...`];
 
 function getMsg() {
-  return msgs[Math.floor(Math.random() * msgs.length)]
+  return msgs[Math.floor(Math.random() * msgs.length)];
 }
 </script>

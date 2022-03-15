@@ -2,7 +2,8 @@
   <section class="hero is-dark is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <Content />
+        <p class="title">{{ title }}</p>
+        <p class="subtitle">{{ subtitle }}</p>
       </div>
     </div>
     <div v-if="contactLinks.length > 0" class="hero-foot">
@@ -24,10 +25,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from "vue";
 import { useData } from "vitepress";
 
 const { frontmatter } = useData();
 
-const contactLinks = computed(() => (!!frontmatter.value.links ? frontmatter.value.links : []))
+const title = computed(() => frontmatter.value.title);
+
+const subtitle = computed(() => frontmatter.value.subtitle);
+
+const contactLinks = computed(() =>
+  !!frontmatter.value.links ? frontmatter.value.links : []
+);
 </script>

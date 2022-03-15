@@ -9,15 +9,21 @@
     "@fortawesome/free-brands-svg-icons": "^6.0.0",
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
-    "@tsconfig/node16": "^1.0.2",
     "bulma": "^0.9.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.5",
+    "prettier": "^2.5.1",
     "sass": "^1.49.9",
     "typescript": "^4.6.2",
     "vitepress": "^0.22.3"
   },
   "scripts": {
-    "site:dev": "vitepress dev site",
-    "site:build": "vitepress build site",
-    "site:serve": "vitepress serve site"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "serve": "vitepress serve",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
