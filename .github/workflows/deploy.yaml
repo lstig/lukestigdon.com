@@ -28,4 +28,4 @@ jobs:
           git add -f $ODIR
           git commit -m 'deploy'
           git filter-branch --subdirectory-filter $ODIR -- --all
-          git push -f main:gh-pages
+          git push -f origin gh-pages
