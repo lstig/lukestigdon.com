@@ -2,8 +2,6 @@
 name: Build and Deploy
 
 env:
-  CNAME: www.lukestigdon.com
-  ODIR: dist
   FILTER_BRANCH_SQUELCH_WARNING: 1
 
 on:
@@ -23,10 +21,9 @@ jobs:
       - run: yarn build
       - name: deploy
         run: |
-          echo $CNAME > $ODIR/CNAME
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add -f $ODIR
+          git add -f dist
           git commit -m 'deploy'
-          git filter-branch --subdirectory-filter $ODIR -- --all
+          git filter-branch --subdirectory-filter dist -- --all
           git push -f origin main:gh-pages
