@@ -2,6 +2,10 @@
 title: Home
 homeTitle: Luke Stigdon
 homeSubtitle: DevOps Engineer and Cloud Technology Enthusiast
+head:
+  - - link
+    - rel: "canonical"
+      href: "https://www.lukestigdon.com"
 links:
   - href: https://www.github.com/lstig
     label: Luke's GitHub account
