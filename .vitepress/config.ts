@@ -34,5 +34,6 @@ export default defineConfig({
     ],
     ["link", { rel: "manifest", href: "/site.webmanifest" }],
   ],
-  outDir: "./dist",
+  outDir: "dist",
+  srcDir: "src",
 });
