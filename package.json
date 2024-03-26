@@ -4,18 +4,19 @@
   "description": "Source for lukestigdon.com",
   "author": "Luke Stigdon",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.0",
-    "@fortawesome/free-brands-svg-icons": "^6.0.0",
-    "@fortawesome/free-solid-svg-icons": "^6.0.0",
-    "@fortawesome/vue-fontawesome": "^3.0.0-5",
-    "bulma": "^0.9.3",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.5.1",
-    "sass": "^1.49.9",
-    "typescript": "^4.6.2",
-    "vitepress": "^0.22.3"
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "bulma": "^1.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.3",
+    "vitepress": "^1.0.1"
   },
   "scripts": {
     "dev": "vitepress dev",
@@ -25,5 +26,6 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  }
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
