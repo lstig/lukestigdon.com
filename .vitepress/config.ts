@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 
+// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Luke Stigdon",
   description: "Platform Engineer and Cloud Technology Enthusiast",
@@ -33,6 +34,6 @@ export default defineConfig({
     ],
     ["link", { rel: "manifest", href: "/site.webmanifest" }],
   ],
-  outDir: "dist",
-  srcDir: "src",
+  srcDir: "./src",
+  outDir: "./dist",
 });

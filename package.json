@@ -20,8 +20,8 @@
   },
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build --mpa",
-    "serve": "vitepress serve",
+    "build": "vitepress build",
+    "serve": "vitepress preview",
     "prepare": "husky install"
   },
   "lint-staged": {

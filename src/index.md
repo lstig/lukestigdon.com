@@ -1,4 +1,5 @@
 ---
+home: true
 title: Home
 homeTitle: Luke Stigdon
 homeSubtitle: Platform Engineer and Cloud Technology Enthusiast
