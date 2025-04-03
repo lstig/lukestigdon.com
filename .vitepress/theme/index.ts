@@ -1,4 +1,5 @@
 // https://vitepress.dev/guide/custom-theme
+// @ts-ignore
 import Layout from "./Layout.vue";
 import type { Theme } from "vitepress";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";

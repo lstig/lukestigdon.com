@@ -1,6 +1,5 @@
 @charset "utf-8";
-// Import Bulma cora
-@import "bulma/sass/utilities";
+@use "bulma/bulma";
 
 // Customizations go here
 div.hero-foot svg {
@@ -8,6 +7,3 @@ div.hero-foot svg {
   height: 1em;
   vertical-align: -0.125em;
 }
-
-// Import Bulma styles
-@import "bulma/bulma";

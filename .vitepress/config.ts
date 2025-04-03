@@ -36,4 +36,14 @@ export default defineConfig({
   ],
   srcDir: "./src",
   outDir: "./dist",
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // fixes compiler warnings until vitepress uses the latest vite version
+          api: "modern",
+        },
+      },
+    },
+  },
 });
