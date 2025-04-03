@@ -16,5 +16,8 @@ node_modules/
 # dotenv environment variables file
 .env
 
-# systemfiles
+# System
 .DS_Store
+
+# Editor
+.idea/
